@@ -179,7 +179,7 @@ export default function JobQueryBuilder({ setTheme, theme }) {
           <TextArea
             value={savedQuery}
             onChange={(e) => setSavedQuery(e.target.value)}
-            placeholder="Paste a saved query here to autofill fields (will overwrite current data)"
+            placeholder="Paste prior query strings here to autofill fields (will overwrite current data)"
             style={{ width: "100%" }}
           />
           <Button disabled={!savedQuery.trim()} onClick={loadSavedQuery}>
