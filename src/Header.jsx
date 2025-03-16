@@ -13,7 +13,6 @@ import {
   Cross2Icon,
 } from "@radix-ui/react-icons";
 import { Separator } from "@radix-ui/react-dropdown-menu";
-import { useState } from "react";
 
 const About = () => {
   const step1 = "Step 1: Generate your custom search query below.";
@@ -48,8 +47,6 @@ const About = () => {
 };
 
 export default function Header({ theme, setTheme }) {
-  const [open, setOpen] = useState(false);
-
   return (
     <header
       style={{
