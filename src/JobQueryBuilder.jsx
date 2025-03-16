@@ -137,11 +137,13 @@ export default function JobQueryBuilder({ setTheme, theme }) {
   };
 
   const loadSavedQuery = () => {
-    if (savedQuery.trim()) {
-      setState(parseQuery(savedQuery));
+    let trimmedQuery = savedQuery.trim();
+
+    if (trimmedQuery) {
+      setState(parseQuery(trimmedQuery));
       localStorage.setItem(
         LOCAL_STORAGE_KEY,
-        JSON.stringify(parseQuery(savedQuery))
+        JSON.stringify(parseQuery(trimmedQuery))
       );
 
       setSavedQuery("");
