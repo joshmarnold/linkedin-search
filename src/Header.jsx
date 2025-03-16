@@ -59,7 +59,7 @@ export default function Header({ theme, setTheme }) {
       <Flex align="center" justify="between" p="8px 16px">
         {/* Left: Site Name */}
         <Text size="4" weight="bold">
-          Job Query Builder
+          Linked Query Builder
         </Text>
 
         <Flex gap={"8px"}>
