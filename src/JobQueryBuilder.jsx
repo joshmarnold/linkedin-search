@@ -27,7 +27,8 @@ const parseQuery = (query) => {
   };
 };
 
-const Section = ({ title, items, add, remove, input, setInput }) => {
+const Section = ({ title, items = [], add, remove, input, setInput }) => {
+  const sortedItems = items.sort((a, b) => a.localeCompare(b));
   return (
     <Flex
       direction={"column"}
@@ -62,7 +63,7 @@ const Section = ({ title, items, add, remove, input, setInput }) => {
         scrollbars="vertical"
         style={{ height: 300, marginTop: 10 }}
       >
-        {items.map((item, idx) => (
+        {sortedItems.map((item, idx) => (
           <Flex
             key={idx}
             justify={"between"}
