@@ -126,9 +126,11 @@ export default function JobQueryBuilder({ setTheme, theme }) {
 
   const generateQuery = () => {
     const format = (arr) => arr.map((item) => `\"${item}\"`).join(" OR ");
-    return `(${format(titles)}) NOT (${format(exclusions)}) AND (${format(
-      locations
-    )})`;
+    let query = `(${format(titles)}) NOT (${format(exclusions)})`;
+    if (locations.length > 0) {
+      query += ` AND (${format(locations)})`;
+    }
+    return query;
   };
 
   const copyToClipboard = () => {
